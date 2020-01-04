@@ -52,6 +52,6 @@ $(document).ready(function() {
       console.log(response);
     });
   }
-
   dogAPI("Yorkshire");
 });
+
