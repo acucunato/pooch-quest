@@ -1,4 +1,4 @@
-$(Document).ready(function () {
+$(document).ready(function () {
 
     function adoptAPI(breed, location, status) {
         var CLIENT_ID = "VCczzgBh8Mbtp61y6gfIIUFuFKPvGPo2Rt2tIwfskw1UOfylEg";
@@ -35,7 +35,7 @@ $(Document).ready(function () {
                     });
             });
     }
-    adoptAPI("Yorkshire", 19125);
+    adoptAPI("Yorkshire Terrier", 19125);
 
     function dogAPI(breed) {
         var API_KEY = "1337f97b-fce8-4485-adca-4714c90a8c1a";
@@ -48,6 +48,6 @@ $(Document).ready(function () {
         });
     }
 
-    dogAPI("Yorkshire");
+    dogAPI("Yorkshire Terrier");
 
 })
