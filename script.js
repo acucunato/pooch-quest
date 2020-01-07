@@ -1,6 +1,11 @@
 
 $(document).ready(function() {
-  function adoptAPI(breed, location, status) {
+
+  var breed = $("#breed_name").val().trim();
+  var location = $("#location_name").val().trim();
+  var sex = $("#sex").val().trim();
+
+  function adoptAPI(breed, location, sex) {
     var CLIENT_ID = "VCczzgBh8Mbtp61y6gfIIUFuFKPvGPo2Rt2tIwfskw1UOfylEg";
     var CLIENT_SECRET = "zudVxDG4Hcl82bK8u85yFqcIpQndRKRH8ARqYnvI";
     fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -22,7 +27,9 @@ $(document).ready(function() {
           "https://api.petfinder.com/v2/animals?type=Dog&distance=50&status=adoptable&breed=" +
             breed +
             "&location=" +
-            location,
+            location +
+            "&sex=" +
+            sex,
           {
             headers: {
               Authorization: "Bearer " + response.access_token
@@ -37,9 +44,8 @@ $(document).ready(function() {
           });
       });
   }
-  adoptAPI("Yorkshire Terrier", 19125);
 
-
+  adoptAPI(breed, location, sex);
 
 
   function dogAPI(breed) {
@@ -54,9 +60,39 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(response) {
       console.log(response);
+
+      var dogName = $("<p>");
+      dogName.text(response[0].name);
+      console.log(response[0].name);
+
+      var dogWeight = $("<p>");
+      dogWeight.text(response[0].weight.imperial);
+      console.log(response[0].weight.imperial);
+
+      var dogHeight = $("<p>");
+      dogHeight.text(response[0].height.imperial);
+      console.log(response[0].height.imperial);
+
+      var lifeSpan = $("<p>");
+      lifeSpan.text(response[0].life_span);
+      console.log(response[0].life_span);
+
+      var dogTemperament = $("<p>");
+      dogTemperament.text(response[0].temperament);
+      console.log(response[0].temperament);
+
+      var breedGroup = $("<p>");
+      breedGroup.text(response[0].breed_group);
+      console.log(response[0].breed_group);
+
+      var bredFor = $("<p>");
+      bredFor.text(response[0].bred_for);
+      console.log(response[0].bred_for);
+
+
     });
   }
-  dogAPI("Yorkshire Terrier");
+  dogAPI(breed);
 
   $('.sidenav').sidenav();
 });
