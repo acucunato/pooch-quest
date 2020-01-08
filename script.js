@@ -69,9 +69,11 @@ $(document).ready(function () {
         '</div>' +
       '</div>' +
     '</div>')
+
+    $("#adopt-section").append(newCard);
     }
 
-    $("#adopt-section").append(newCard)
+    
   });
 });
 }
@@ -92,6 +94,10 @@ $(document).ready(function () {
       console.log(response);
 
       var infoCard = $("<div>");
+
+      var cardHeader = $("<h2>");
+      cardHeader.text("Before You Begin Your Journey, Get To Know Your Hound!");
+      cardHeader.appendTo(infoCard);
 
       var dogName = $("<p>");
       dogName.text("Name: "+ response[0].name);
