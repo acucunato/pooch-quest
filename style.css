@@ -4,7 +4,8 @@
 
 .sidenav {
    font-family: 'MedievalSharp', cursive;
-   color: maroon;
+   color: rgb(15, 14, 14);
+ 
 
 }
 
@@ -24,6 +25,7 @@ h3{
    padding-left: 4%;
    padding-right: 4%;
    text-decoration: black;
+   color: black;
    font-size: medium;
    font-weight: bolder;
 
@@ -56,3 +58,26 @@ h3{
    font-family: 'MedievalSharp', cursive;
    font-size: x-large;
 }
+
+#sideBarImg {
+   width: 600px;
+   height: 600px;
+  position: relative;
+  /* // Image as background */
+  background: url('https://unsplash.it/600x600') center center no-repeat;
+  background-size: cover;
+
+
+    /* // Pseudo element will only render if it has a content property */
+    content: '';
+    /* // Overlay should occupy the full width and height of parent image container */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* // Overlay background-color */
+    background-color: #000000;
+    /* // Overlay opacity, else overlay won't be transparent and show the image */
+    opacity: 0.6;
+  } 
