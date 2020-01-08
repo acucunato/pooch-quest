@@ -1,5 +1,46 @@
+.nav-extended {
+   background-color: maroon;
+}
+
+.sidenav {
+   font-family: 'MedievalSharp', cursive;
+   color: maroon;
+
+}
+
 #search-param {
    padding-left: 4%;
    padding-right: 4%;
    text-decoration: black;
+   font-size: medium;
+   font-weight: bolder;
+
+}
+
+.search-labels {
+   font-size: x-large;
+   color: maroon;
+   font-weight: bold;
+}
+
+.sidenav-trigger {
+   color: rgb(38, 3, 71);
+   font-size: xx-large;
+   font-weight: bolder;
+   font-family: 'MedievalSharp', cursive;
+   background-color: rgb(218, 209, 209);
+   padding: 2%;
+   border-style: ridge;
+   border-width: thick;
+}
+
+.sidenav-trigger {
+   margin-left: 40%;
+   margin-top: initial;
+}
+
+#searchBtn {
+   background-color: maroon;
+   font-family: 'MedievalSharp', cursive;
+   font-size: x-large;
 }

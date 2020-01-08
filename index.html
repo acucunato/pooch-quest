@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Undefined group project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="script.js"></script>  
 </head> 
 <body>
@@ -37,7 +38,7 @@
           <img src="images/office.jpg">
         </div>
         <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-        <h4>Seeking</h4>
+        <h4>Seeking</h4 >
       </div>
     </li>
       <div class="row" id="search-param">
@@ -45,21 +46,21 @@
           <div class="row">
             <div>
               <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
-              <label for="breed_name">Breed</label>
+              <label for="breed_name" class="search-labels">Breed</label>
             </div>
               <br>
             <div>
               <input placeholder="Zip Code" id="location_name" type="text" class="validate">
-              <label for="location_name">Location</label>
+              <label for="location_name" class="search-labels">Location</label>
             </div>
               <br>
             <br>
             <div>
               <input placeholder="Male or Female" id="sex" type="text" class="validate">
-              <label for="sex">Sex</label>
+              <label for="sex" class="search-labels">Sex</label>
             </div>
           </div>
-          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Submit
+          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch
             <i class="material-icons right"></i>
           </button>
         </div>
