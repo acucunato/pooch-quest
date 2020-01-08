@@ -1,8 +1,11 @@
 
+
 $(document).ready(function () {
+
 
   // Function pull nearest adoptable dogs
   function adoptAPI(breed, location, sex) {
+
     var CLIENT_ID = "VCczzgBh8Mbtp61y6gfIIUFuFKPvGPo2Rt2tIwfskw1UOfylEg";
     var CLIENT_SECRET = "zudVxDG4Hcl82bK8u85yFqcIpQndRKRH8ARqYnvI";
     fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -16,6 +19,7 @@ $(document).ready(function () {
       },
       method: "POST"
     })
+
       .then(function (response) {
         return response.json();
       })
@@ -27,6 +31,7 @@ $(document).ready(function () {
           location +
           "&sex=" +
           sex,
+
           {
             headers: {
               Authorization: "Bearer " + response.access_token
@@ -37,10 +42,40 @@ $(document).ready(function () {
             return response.json();
           })
           .then(function (response) {
+
             console.log(response);
-          });
-      });
-  }
+ 
+    for (i = 0; i < response.animals.length; i++) {
+      var name = response.animals[i].name;
+      var age = response.animals[i].age;
+      var description = response.animals[i].description;
+      var urlLink = response.animals[i].url;
+      var distance = response.animals[i].distance;
+      var photo = response.animals[i].photos[0].small;
+
+      var newCard = $('<div class="col s12 m7">').html('<h2 class="header">' + name + '   ' + age + '</h2>' +
+      '<div class="card horizontal">' +
+       '<div class="card-image">' +
+        '<img src="' + photo + '">' +
+        '</div>' +
+        '<div class="card-stacked">' +
+        '<div class="card-content">' +
+         '<p>' + description + '</p>' +
+         '<p>' + distance + '</p>' +
+        '</div>' +
+        '<div class="card-action">' +
+        '<a href="' + urlLink + '"> Your Quest is Over - Click Here to Adopt Me! </a>' +
+        '</div>' + 
+        '</div>' +
+      '</div>' +
+    '</div>')
+    }
+
+    $("#adopt-section").append(newCard)
+  });
+});
+}
+
 
   // Function to pull Breed Information for API database
   function dogAPI(breed) {
@@ -104,7 +139,9 @@ $(document).ready(function () {
   // Event Listener for Search Button
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
+
     $("#breedSection").empty();
+
     var breed = $("#breed_name").val().trim();
     var location = $("#location_name").val().trim();
     var sex = $("#sex").val().trim();
