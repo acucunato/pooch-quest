@@ -91,33 +91,46 @@ $(document).ready(function () {
     }).then(function (response) {
       console.log(response);
 
+      var infoCard = $("<div>");
+
       var dogName = $("<p>");
-      dogName.text(response[0].name);
+      dogName.text("Name: "+ response[0].name);
+      dogName.appendTo(infoCard);
       console.log(response[0].name);
 
       var dogWeight = $("<p>");
-      dogWeight.text(response[0].weight.imperial);
+      dogWeight.text("Weight: " + response[0].weight.imperial+ " lbs");
+      dogWeight.appendTo(infoCard);
       console.log(response[0].weight.imperial);
 
       var dogHeight = $("<p>");
-      dogHeight.text(response[0].height.imperial);
+      dogHeight.text("Height: " + response[0].height.imperial+" inches");
+      dogHeight.appendTo(infoCard);
       console.log(response[0].height.imperial);
 
       var lifeSpan = $("<p>");
-      lifeSpan.text(response[0].life_span);
+      lifeSpan.text("Life Span: " + response[0].life_span);
+      lifeSpan.appendTo(infoCard);
       console.log(response[0].life_span);
 
       var dogTemperament = $("<p>");
-      dogTemperament.text(response[0].temperament);
+      dogTemperament.text("Temperament: "+ response[0].temperament);
+      dogTemperament.appendTo(infoCard);
       console.log(response[0].temperament);
 
       var breedGroup = $("<p>");
-      breedGroup.text(response[0].breed_group);
+      breedGroup.text("Breed Group: "+ response[0].breed_group);
+      breedGroup.appendTo(infoCard);
       console.log(response[0].breed_group);
 
       var bredFor = $("<p>");
-      bredFor.text(response[0].bred_for);
+      bredFor.text("Bred For: " + response[0].bred_for);
+      bredFor.appendTo(infoCard);
       console.log(response[0].bred_for);
+
+      infoCard.appendTo("#breedSection");
+
+
 
 
     });
@@ -126,7 +139,9 @@ $(document).ready(function () {
   // Event Listener for Search Button
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
-    // $(".conditions").empty();
+
+    $("#breedSection").empty();
+
     var breed = $("#breed_name").val().trim();
     var location = $("#location_name").val().trim();
     var sex = $("#sex").val().trim();
