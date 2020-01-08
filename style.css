@@ -102,6 +102,13 @@
 
   #breedSection {
      display: none;
+     text-align: center;
+     font-size: 25px;
+     color: rgb(38, 3, 71);
+     font-family: 'Berkshire Swash', cursive;   
+     border-bottom: dotted;
+     border-color: rgb(38, 3, 71);
+     padding-bottom: 30px;
   }
 
   #adopt-section {
@@ -151,6 +158,7 @@
      color: rgb(38, 3, 71);
      text-shadow: 2px 2px goldenrod;
      font-family: 'Berkshire Swash', cursive;
+     display: block;
   }
 
   .fab.fa-fort-awesome {
