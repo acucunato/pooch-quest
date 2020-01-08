@@ -140,6 +140,8 @@ $(document).ready(function() {
       console.log(response[0].bred_for);
 
       infoCard.appendTo("#breedSection");
+
+      
     });
   }
 
@@ -152,6 +154,9 @@ $(document).ready(function() {
     var breed = $("#breed_name").val().trim();
     var location = $("#location_name").val().trim();
     var sex = $("#sex").val().trim();
+
+    $("#breedSection").css("display", "block");
+    $("#adopt-section").css("display", "block");
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);

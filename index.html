@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://use.fontawesome.com/e27ed76465.js"></script>
+    <script src="https://kit.fontawesome.com/8eda10df1b.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>  
 </head> 
 <body>
@@ -21,19 +22,15 @@
       </div>
     <div class="nav-content">
       <div class="center">
-      <span class="nav-title center"><h3>Pooch Quest</h3></span>
+      <span class="nav-title center"><h1 id="poochQuestHeader">Pooch Quest</h1></span>
     </div>
     </div>
   </nav>
     <ul id="slide-out" class="sidenav">
       <li>
         <div class="user-view">
-        <div class="background">
-          <img src="images/office.jpg">
-        </div>
-
-        <a href="#user"><img class="square" id="sideBarImg" src="assets\img\59500581.jpg"></a>
-        <h4>Seeking</h4 >
+        
+        <h4 id="explore">Explore</h4>
 
       </div>
     </li>
@@ -56,17 +53,17 @@
               <label for="sex" class="search-labels">Sex</label>
             </div>
           </div>
-          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch<i class="fas fa-paw"></i>
+          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch <i class="fas fa-paw"></i>
           </button>
         </div>
         </div>
       </div>
   </ul>
   
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start the Chase</i></a>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start Your Adventure</i></a>
 </div>
 
-<div class="breedInfo" id="breedSection"> Important Information for Your Expedition!</div>
+<div class="breedInfo" id="breedSection"></div>
 <div id="adopt-section"></div>
 
 </body>
