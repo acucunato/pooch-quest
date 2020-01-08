@@ -143,6 +143,25 @@
      text-align: center;
   }
 
+  .landingPage {
+     width: 960px;
+     margin: auto;
+     text-align: center;
+     font-size: 40px;
+     color: rgb(38, 3, 71);
+     text-shadow: 2px 2px goldenrod;
+     font-family: 'Berkshire Swash', cursive;
+  }
+
+  .fab.fa-fort-awesome {
+     font-size: 50px;
+     color: rgb(38, 3, 71);
+  }
+  div.col.s2 {
+     text-align: center;
+     text-shadow: 2px 2px goldenrod;
+  }
+
 
    
 
