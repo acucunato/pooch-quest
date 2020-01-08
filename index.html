@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Undefined group project</title>
+    <title>Pooch Quest!</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -12,7 +12,63 @@
     <script src="script.js"></script>  
 </head> 
 <body>
-    
+
+  <div class="container-fluid"></div>  
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Pooch Quest</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a>A link</a></li>
+        <li><a>A second link</a></li>
+        <li><a>A third link</a></li>
+      </ul>
+    </div>
+    <div class="nav-content">
+      <span class="nav-title">Title</span>
+      <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <h5>Seeking</h4>
+    </div>
+  </li>
+    <div class="row" id="search-param">
+      <div class="col s12">
+        <div class="row">
+          <div>
+            <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
+            <label for="breed_name">Breed</label>
+          </div>
+            <br>
+          <div>
+            <input placeholder="Zip Code" id="location_name" type="text" class="validate">
+            <label for="location_name">Location</label>
+          </div>
+            <br>
+          <br>
+          <div>
+            <input placeholder="Male or Female" id="sex" type="text" class="validate">
+            <label for="sex">Sex</label>
+          </div>
+        </div>
+      </div>
+  </ul>
+  
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start the Chase</i></a>
+</div>
+
+
+<div id="adopt-section"></div>
+  
 </body>
-    
-</html>˜
+  
+</html>
