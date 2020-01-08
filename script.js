@@ -146,16 +146,12 @@ $(document).ready(function() {
   // Event Listener for Search Button
   $("#searchBtn").on("click", function(event) {
     event.preventDefault();
-    // $(".conditions").empty();
-    var breed = $("#breed_name")
-      .val()
-      .trim();
-    var location = $("#location_name")
-      .val()
-      .trim();
-    var sex = $("#sex")
-      .val()
-      .trim();
+
+    $("#breedSection").empty();
+
+    var breed = $("#breed_name").val().trim();
+    var location = $("#location_name").val().trim();
+    var sex = $("#sex").val().trim();
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);
