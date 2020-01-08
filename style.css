@@ -115,28 +115,34 @@
   #breed_name {
      font-size: 25px;
      border-bottom: 2px solid maroon;
+     color: maroon;
+     font-family: 'Berkshire Swash', cursive;
   }
 
   #location_name {
    font-size: 25px;
    border-bottom: 2px solid maroon;
+   color: maroon;
+   font-family: 'Berkshire Swash', cursive;
   }
 
   #sex {
    font-size: 25px;
    border-bottom: 2px solid maroon;
+   color: maroon;
+   font-family: 'Berkshire Swash', cursive;
   }
 
   input::placeholder {
+     text-align: center;
      color: black;
      font-family: 'Berkshire Swash', cursive;
   }
 
+  input {
+     text-align: center;
+  }
 
-   input {
-   color: maroon;
-   text-align: center;
-   font-family: 'Berkshire Swash', cursive;
+
    
-}
 
