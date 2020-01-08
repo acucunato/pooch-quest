@@ -10,25 +10,19 @@
     <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://use.fontawesome.com/e27ed76465.js"></script>
     <script src="script.js"></script>  
 </head> 
 <body>
-
   <div class="container-fluid"></div>  
   <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Pooch Quest</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a>A link</a></li>
-        <li><a>A second link</a></li>
-        <li><a>A third link</a></li>
-      </ul>
-    </div>
+      <a href="index.html" class="brand-logo center"><img src="assets/img/poochlogo.png" height="220px" width="200px"></a>
+      </div>
     <div class="nav-content">
-      <span class="nav-title">Title</span>
-      <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
-        <i class="material-icons">add</i>
-      </a>
+      <div class="center">
+      <span class="nav-title center"><h3>Pooch Quest</h3></span>
+    </div>
     </div>
   </nav>
     <ul id="slide-out" class="sidenav">
@@ -37,8 +31,10 @@
         <div class="background">
           <img src="images/office.jpg">
         </div>
-        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+
+        <a href="#user"><img class="square" id="sideBarImg" src="assets\img\59500581.jpg"></a>
         <h4>Seeking</h4 >
+
       </div>
     </li>
       <div class="row" id="search-param">
@@ -60,8 +56,7 @@
               <label for="sex" class="search-labels">Sex</label>
             </div>
           </div>
-          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch
-            <i class="material-icons right"></i>
+          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch<i class="fas fa-paw"></i>
           </button>
         </div>
         </div>
