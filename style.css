@@ -105,7 +105,7 @@
      text-align: center;
      font-size: 25px;
      color: rgb(38, 3, 71);
-     font-family: 'Berkshire Swash', cursive;   
+     font-family: 'Lato', sans-serif;   
      border-bottom: dotted;
      border-color: rgb(38, 3, 71);
      padding-bottom: 30px;
@@ -113,6 +113,7 @@
 
   #adopt-section {
      display: none;
+     font-family: 'Lato', sans-serif;
   }
 
   div.col.s12 {
@@ -143,11 +144,12 @@
   input::placeholder {
      text-align: center;
      color: black;
-     font-family: 'Berkshire Swash', cursive;
+     font-family: 'Lato', sans-serif;
   }
 
   input {
      text-align: center;
+     font-family: 'Lato', sans-serif;
   }
 
   .landingPage {
