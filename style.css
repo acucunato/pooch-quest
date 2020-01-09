@@ -143,11 +143,12 @@
   input::placeholder {
      text-align: center;
      color: black;
-     font-family: 'Berkshire Swash', cursive;
+     font-family: 'Lato', sans-serif;
   }
 
   input {
      text-align: center;
+     font-family: 'Lato', sans-serif;
   }
 
   .landingPage {
