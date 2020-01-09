@@ -105,17 +105,20 @@ $(document).ready(function() {
       var infoCard = $("<div>");
 
       var dogName = $("<p>");
-      dogName.text("Name: " + response[0].name);
+      dogName.text(response[0].name);
+      dogName.css("text-decoration" , "underline");
+      dogName.css("font-weight" , "bold");
+      dogName.css("font-size" , 35);
       dogName.appendTo(infoCard);
       console.log(response[0].name);
 
       var dogWeight = $("<p>");
-      dogWeight.text("Weight: " + response[0].weight.imperial + " lbs");
+      dogWeight.text("Average Weight: " + response[0].weight.imperial + " lbs");
       dogWeight.appendTo(infoCard);
       console.log(response[0].weight.imperial);
 
       var dogHeight = $("<p>");
-      dogHeight.text("Height: " + response[0].height.imperial + " inches");
+      dogHeight.text("Average Height: " + response[0].height.imperial + " inches");
       dogHeight.appendTo(infoCard);
       console.log(response[0].height.imperial);
 
@@ -140,6 +143,8 @@ $(document).ready(function() {
       console.log(response[0].bred_for);
 
       infoCard.appendTo("#breedSection");
+
+      
     });
   }
 
@@ -152,6 +157,10 @@ $(document).ready(function() {
     var breed = $("#breed_name").val().trim();
     var location = $("#location_name").val().trim();
     var sex = $("#sex").val().trim();
+
+    $("#breedSection").css("display", "block");
+    $("#adopt-section").css("display", "block");
+    $(".landingPage").css("display", "none");
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);

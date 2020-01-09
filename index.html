@@ -1,74 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pooch Quest!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://use.fontawesome.com/e27ed76465.js"></script>
-    <script src="script.js"></script>  
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pooch Quest!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/8eda10df1b.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</head>
+
 <body>
-  <div class="container-fluid"></div>  
+  <div class="container-fluid"></div>
   <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo center"><img src="assets/img/poochlogo.png" height="220px" width="200px"></a>
-      </div>
+      <a href="index.html" class="brand-logo center"><img src="assets/img/poochlogo.png" height="220px"
+          width="200px"></a>
+    </div>
     <div class="nav-content">
       <div class="center">
-      <span class="nav-title center"><h3>Pooch Quest</h3></span>
-    </div>
+        <span class="nav-title center">
+          <h1 id="poochQuestHeader">Pooch Quest</h1>
+        </span>
+      </div>
     </div>
   </nav>
-    <ul id="slide-out" class="sidenav">
-      <li>
-        <div class="user-view">
-        <div class="background">
-          <img src="images/office.jpg">
-        </div>
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
 
-        <a href="#user"><img class="square" id="sideBarImg" src="assets\img\59500581.jpg"></a>
-        <h4>Seeking</h4 >
+        <h4 id="explore">Explore</h4>
 
       </div>
     </li>
-      <div class="row" id="search-param">
-        <div class="col s12">
-          <div class="row">
-            <div>
-              <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
-              <label for="breed_name" class="search-labels">Breed</label>
-            </div>
-              <br>
-            <div>
-              <input placeholder="Zip Code" id="location_name" type="text" class="validate">
-              <label for="location_name" class="search-labels">Location</label>
-            </div>
-              <br>
-            <br>
-            <div>
-              <input placeholder="Male or Female" id="sex" type="text" class="validate">
-              <label for="sex" class="search-labels">Sex</label>
-            </div>
+    <div class="row" id="search-param">
+      <div class="col s12">
+        <div class="row">
+          <div>
+            <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
+            <label for="breed_name" class="search-labels">Breed</label>
           </div>
-          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch<i class="fas fa-paw"></i>
-          </button>
+          <br>
+          <div>
+            <input placeholder="Zip Code" id="location_name" type="text" class="validate">
+            <label for="location_name" class="search-labels">Location</label>
+          </div>
+          <br>
+          <br>
+          <div>
+            <input placeholder="Male or Female" id="sex" type="text" class="validate">
+            <label for="sex" class="search-labels">Sex</label>
+          </div>
         </div>
-        </div>
+        <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch <i
+            class="fas fa-paw"></i>
+        </button>
       </div>
+    </div>
+    </div>
   </ul>
-  
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start the Chase</i></a>
-</div>
 
-<div class="breedInfo" id="breedSection"> Important Information for Your Expedition!</div>
-<div id="adopt-section"></div>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start Your Adventure</i></a>
+  </div>
+  <div class="row">
+    <div class="col s2"><i class="fab fa-fort-awesome"></i></div>
+    <div class="col s8">
+      <div class="landingPage">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus doloribus esse aspernatur, impedit
+          magnam laboriosam eaque ratione deleniti voluptatem quas, earum necessitatibus. Cum eius, fuga deserunt vitae
+          ipsam rerum?</p>
+      </div>
+    </div>
+    <div class="col s2"><i class="fab fa-fort-awesome"></i></div>
+  </div>
+
+  <div class="breedInfo" id="breedSection"></div>
+
+
+  <div id="adopt-section"></div>
 
 </body>
-  
+
 </html>
