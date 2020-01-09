@@ -170,6 +170,38 @@
      text-shadow: 2px 2px goldenrod;
   }
 
+  /* alyssa styling */
 
-   
+  #adopt-cards {
+   font-size: 20px;
+   border: 2px solid rgb(38, 3, 71);
+   border-radius: 5px;
+   background-color: maroon;
+   color: maroon;
+   font-family: 'Berkshire Swash', cursive;
+   text-align: left;
+  }
 
+  #dog-name {
+   font-size: 60px;
+   color: rgb(38, 3, 71);
+   text-shadow: 2px 2px goldenrod;
+   font-family: 'Berkshire Swash', cursive;
+  }
+
+  #tidbits {
+   font-size: 30px;
+   color: rgb(38, 3, 71);
+   text-shadow: 2px 2px goldenrod;
+   font-family: 'Berkshire Swash', cursive;
+  }
+
+#card-background {
+   background-image: url("https://i.pinimg.com/originals/c2/5e/be/c25ebe5e5160fd0a6e1da92189a6ae02.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#copy-mission {
+   font-size: 25px;
+}

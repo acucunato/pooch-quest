@@ -45,12 +45,17 @@ $(document).ready(function() {
               var urlLink = response.animals[i].url;
               var distance = response.animals[i].distance;
               var photo = response.animals[i].photos[0].medium;
+              var city = response.animals[i].contact.address.city;
+              var state = response.animals[i].contact.address.state;
+              var postCode = response.animals[i].contact.address.postcode;
+              var size = response.animals[i].size;
+              var gender = response.animals[i].gender;
 
-              var newCard = $('<div class="col s12 m7">').html(
-                '<h3 class="header">' +
+              var newCard = $('<div class="col s12 m7" id="adopt-cards">').html(
+                '<h3 class="header" id="dog-name">' +
                   name +
                   "</h3>" +
-                  '<div class="card horizontal">' +
+                  '<div class="card horizontal" id="card-background">' +
                   '<div class="card-image">' +
                   '<img src="' +
                   photo +
@@ -58,8 +63,9 @@ $(document).ready(function() {
                   "</div>" +
                   '<div class="card-stacked">' +
                   '<div class="card-content">' +
-                  "<p>" +
-                  "A few tidbits about this pooch: " +
+                   '<p id="tidbits">' +
+                  "A few treasures about this pooch: " + '</p>' + 
+                  '<p>' +
                   description +
                   "</p>" +
                   "<p>" +
@@ -67,10 +73,19 @@ $(document).ready(function() {
                   age +
                   "</p>" +
                   "<p>" +
+                  "Size: " +
+                  size +
+                  "</p>" +
+                  "<p>" +
+                  "Gender: " +
+                  gender +
+                  "</p>" +
+                  "<p>" +
                   "This pooch could be yours with a small journey of " +
                   distance.toFixed(1) +
                   " miles." +
-                  "</p>" +
+                  "</p>" + "<br>" +
+                  '<p id="city-state-post">' + city + ", " + state + " " + postCode + '</p>' + 
                   "</div>" +
                   '<div class="card-action">' +
                   '<a href="' +
@@ -79,11 +94,13 @@ $(document).ready(function() {
                   "</div>" +
                   "</div>" +
                   "</div>" +
-                  "</div>"
+                  "</div>" 
               );
 
               $("#adopt-section").append(newCard);
             }
+
+            // $("#adopt-cards").css()
           });
       });
   }
@@ -153,6 +170,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#breedSection").empty();
+    $("#adopt-section").empty();
 
     var breed = $("#breed_name").val().trim();
     var location = $("#location_name").val().trim();
