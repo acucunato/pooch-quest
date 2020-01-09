@@ -63,9 +63,10 @@ $(document).ready(function() {
                   "</div>" +
                   '<div class="card-stacked">' +
                   '<div class="card-content">' +
-                   '<p id="tidbits">' +
-                  "A few treasures about this pooch: " + '</p>' + 
-                  '<p>' +
+                  '<p id="tidbits">' +
+                  "A few treasures about this pooch: " +
+                  "</p>" +
+                  "<p>" +
                   description +
                   "</p>" +
                   "<p>" +
@@ -84,8 +85,15 @@ $(document).ready(function() {
                   "This pooch could be yours with a small journey of " +
                   distance.toFixed(1) +
                   " miles." +
-                  "</p>" + "<br>" +
-                  '<p id="city-state-post">' + city + ", " + state + " " + postCode + '</p>' + 
+                  "</p>" +
+                  "<br>" +
+                  '<p id="city-state-post">' +
+                  city +
+                  ", " +
+                  state +
+                  " " +
+                  postCode +
+                  "</p>" +
                   "</div>" +
                   '<div class="card-action">' +
                   '<a href="' +
@@ -94,7 +102,7 @@ $(document).ready(function() {
                   "</div>" +
                   "</div>" +
                   "</div>" +
-                  "</div>" 
+                  "</div>"
               );
 
               $("#adopt-section").append(newCard);
@@ -123,9 +131,9 @@ $(document).ready(function() {
 
       var dogName = $("<p>");
       dogName.text(response[0].name);
-      dogName.css("text-decoration" , "underline");
-      dogName.css("font-weight" , "bold");
-      dogName.css("font-size" , 35);
+      dogName.css("text-decoration", "underline");
+      dogName.css("font-weight", "bold");
+      dogName.css("font-size", 35);
       dogName.appendTo(infoCard);
       console.log(response[0].name);
 
@@ -135,7 +143,9 @@ $(document).ready(function() {
       console.log(response[0].weight.imperial);
 
       var dogHeight = $("<p>");
-      dogHeight.text("Average Height: " + response[0].height.imperial + " inches");
+      dogHeight.text(
+        "Average Height: " + response[0].height.imperial + " inches"
+      );
       dogHeight.appendTo(infoCard);
       console.log(response[0].height.imperial);
 
@@ -160,8 +170,6 @@ $(document).ready(function() {
       console.log(response[0].bred_for);
 
       infoCard.appendTo("#breedSection");
-
-      
     });
   }
 
@@ -172,9 +180,15 @@ $(document).ready(function() {
     $("#breedSection").empty();
     $("#adopt-section").empty();
 
-    var breed = $("#breed_name").val().trim();
-    var location = $("#location_name").val().trim();
-    var sex = $("#sex").val().trim();
+    var breed = $("#breed_name")
+      .val()
+      .trim();
+    var location = $("#location_name")
+      .val()
+      .trim();
+    var sex = $("#sex")
+      .val()
+      .trim();
 
     $("#breedSection").css("display", "block");
     $("#adopt-section").css("display", "block");
