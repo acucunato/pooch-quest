@@ -75,7 +75,7 @@ a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
 
 /*input label form focus color*/
 input[type=text]:not(.browser-default):focus:not([readonly])+label {
-   color: grey;
+   color: grey !important;
 }
 
 .sidenav-trigger {
