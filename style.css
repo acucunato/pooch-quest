@@ -101,7 +101,7 @@ body {
      text-align: center;
      font-size: 25px;
      color: rgb(38, 3, 71);
-     font-family: 'Lato', sans-serif;   
+     font-family: "Berkshire Swash", cursive; 
      border-bottom: dotted;
      border-color: rgb(38, 3, 71);
      padding-bottom: 30px;
@@ -109,7 +109,6 @@ body {
 
   #adopt-section {
      display: none;
-     font-family: 'Lato', sans-serif;
   }
 
   div.col.s12 {
@@ -175,6 +174,28 @@ input::placeholder {
   font-family: "Berkshire Swash", cursive;
 }
 
+
+/* alyssa styling */
+
+#adopt-cards {
+  font-size: 20px;
+  border: 2px solid rgb(38, 3, 71);
+  border-radius: 5px;
+  background-color: maroon;
+  color: maroon;
+  font-family: 'Lato', sans-serif;
+  text-align: left;
+  margin: 30px 40px 30px 40px;
+}
+
+#dog-name {
+  font-size: 60px;
+  color: rgb(38, 3, 71);
+  text-shadow: 2px 2px goldenrod;
+  font-family: "Berkshire Swash", cursive;
+  margin-left: 15px;
+}
+
 input {
   text-align: center;
 }
@@ -197,26 +218,6 @@ input {
 div.col.s2 {
   text-align: center;
   text-shadow: 2px 2px goldenrod;
-}
-
-/* alyssa styling */
-
-#adopt-cards {
-  font-size: 20px;
-  border: 2px solid rgb(38, 3, 71);
-  border-radius: 5px;
-  background-color: maroon;
-  color: maroon;
-  font-family: "Berkshire Swash", cursive;
-  text-align: left;
-  margin: 30px 40px 30px 40px;
-}
-
-#dog-name {
-  font-size: 60px;
-  color: rgb(38, 3, 71);
-  text-shadow: 2px 2px goldenrod;
-  font-family: "Berkshire Swash", cursive;
 }
 
 #tidbits {
