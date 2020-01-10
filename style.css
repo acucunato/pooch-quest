@@ -68,6 +68,16 @@ body {
   background-size: cover;
 }
 
+/*overriding Materialize default color property by important descriptor*/
+a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+   color: #260347 !important;
+}
+
+/*input label form focus color*/
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+   color: grey;
+}
+
 .sidenav-trigger {
   display: flex;
   justify-content: center;
