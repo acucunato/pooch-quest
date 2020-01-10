@@ -36,7 +36,13 @@ $(document).ready(function() {
             return response.json();
           })
           .then(function(response) {
-            console.log(response);
+            console.log(response.status);
+            // console.log(response.status)
+
+            if(response.status === 400){
+
+              return $(".error-message").text("Alas fellow Knight, there are no hounds to be found.");
+            }
 
             for (i = 0; i < response.animals.length; i++) {
               var name = response.animals[i].name;
@@ -107,9 +113,8 @@ $(document).ready(function() {
 
               $("#adopt-section").append(newCard);
             }
-
-            // $("#adopt-cards").css()
-          });
+          })
+      
       });
   }
 
@@ -183,6 +188,7 @@ $(document).ready(function() {
     var breed = $("#breed_name")
       .val()
       .trim();
+    
     var location = $("#location_name")
       .val()
       .trim();
@@ -196,6 +202,7 @@ $(document).ready(function() {
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);
+
   });
 
   // JQuery for Sidenav functionality
