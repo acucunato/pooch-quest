@@ -14,7 +14,7 @@
 }
 
 #poochQuestHeader {
-   color:  rgb(38, 3, 71);
+   color:  #260347;
    width: 100%;
    letter-spacing: 100px;
    text-align: center;
@@ -22,6 +22,11 @@
    margin-left: 35px;
    text-shadow: 2px 2px goldenrod;
    font-size: 60px;
+}
+
+/*overriding Materialize default color property by important descriptor*/
+a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+   color: #260347 !important;
 }
 
 .nav-content{
@@ -43,11 +48,17 @@
    color: maroon;
    font-weight: bolder;
    text-shadow: 2px 2px goldenrod;
+   
+}
+
+/*input label form focus color*/
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+   color: grey;
 }
 
 .sidenav-trigger {
-   color: rgb(38, 3, 71);
-   text-shadow: 2px 2px goldenrod;
+   color: #260347;
+   text-shadow: 2px 2px rgb(31, 29, 23);
    font-size: xx-large;
    font-weight: bolder;
    font-family: 'MedievalSharp', cursive;
@@ -104,10 +115,10 @@
      display: none;
      text-align: center;
      font-size: 25px;
-     color: rgb(38, 3, 71);
+     color: #260347;
      font-family: 'Berkshire Swash', cursive;   
      border-bottom: dotted;
-     border-color: rgb(38, 3, 71);
+     border-color: #260347;
      padding-bottom: 30px;
   }
 
@@ -155,7 +166,7 @@
      margin: auto;
      text-align: center;
      font-size: 40px;
-     color: rgb(38, 3, 71);
+     color: #260347;
      text-shadow: 2px 2px goldenrod;
      font-family: 'Berkshire Swash', cursive;
      display: block;
@@ -169,7 +180,6 @@
      text-align: center;
      text-shadow: 2px 2px goldenrod;
   }
-
 
    
 
