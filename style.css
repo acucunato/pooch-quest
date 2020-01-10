@@ -29,6 +29,11 @@ a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
    color: #260347 !important;
 }
 
+/*input label form focus color*/
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+   color: grey;
+}
+
 .nav-content{
    padding-bottom: 30px;
 }
@@ -49,11 +54,6 @@ a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
    font-weight: bolder;
    text-shadow: 2px 2px goldenrod;
    
-}
-
-/*input label form focus color*/
-input[type=text]:not(.browser-default):focus:not([readonly])+label {
-   color: grey;
 }
 
 .sidenav-trigger {
