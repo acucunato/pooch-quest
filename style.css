@@ -1,6 +1,10 @@
 .nav-extended {
   background-color: maroon;
-  background: radial-gradient(circle, rgba(128,0,0,1) 80%, rgba(45,40,40,1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(128, 0, 0, 1) 80%,
+    rgba(45, 40, 40, 1) 100%
+  );
 }
 
 .sidenav {
@@ -81,108 +85,105 @@ body {
 
 /*overriding Materialize default color property by important descriptor*/
 a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-   color: #260347 !important;
+  color: #260347 !important;
 }
 
 /*input label form focus color*/
-input[type=text]:not(.browser-default):focus:not([readonly])+label {
-   color: grey !important;
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label {
+  color: grey !important;
 }
 
-  ul#slide-out.sidenav {
-   background-image: url("https://i.pinimg.com/originals/27/82/8a/27828aea822ebf888324b649c8b4f23f.jpg");
-   background-repeat: no-repeat;
-   background-size: cover;
+ul#slide-out.sidenav {
+  background-image: url("https://i.pinimg.com/originals/27/82/8a/27828aea822ebf888324b649c8b4f23f.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  }
+#explore {
+  font-size: 50px;
+  color: maroon;
+  font-weight: bolder;
+  text-shadow: 2px 2px goldenrod;
+  text-align: center;
+  margin-bottom: 45px;
+}
 
-  #explore {
-   font-size: 50px;
-   color: maroon;
-   font-weight: bolder;
-   text-shadow: 2px 2px goldenrod;
-   text-align: center;
-   margin-bottom: 45px;
-  }
+#breedSection {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+  color: rgb(38, 3, 71);
+  font-family: "Berkshire Swash", cursive;
+  border-bottom: dotted;
+  border-color: rgb(38, 3, 71);
+  padding-bottom: 30px;
+}
 
-  #breedSection {
-     display: none;
-     text-align: center;
-     font-size: 25px;
-     color: rgb(38, 3, 71);
-     font-family: "Berkshire Swash", cursive; 
-     border-bottom: dotted;
-     border-color: rgb(38, 3, 71);
-     padding-bottom: 30px;
-  }
+#adopt-section {
+  display: none;
+}
 
-  #adopt-section {
-     display: none;
-  }
+div.col.s12 {
+  text-align: center;
+}
 
-  div.col.s12 {
-     text-align: center;
-  }
+#breed_name {
+  font-size: 25px;
+  border-bottom: 2px solid maroon;
+  color: maroon;
+  font-family: "Berkshire Swash", cursive;
+}
 
-  #breed_name {
-     font-size: 25px;
-     border-bottom: 2px solid maroon;
-     color: maroon;
-     font-family: 'Berkshire Swash', cursive;
-  }
+#location_name {
+  font-size: 25px;
+  border-bottom: 2px solid maroon;
+  color: maroon;
+  font-family: "Berkshire Swash", cursive;
+}
 
-  #location_name {
-   font-size: 25px;
-   border-bottom: 2px solid maroon;
-   color: maroon;
-   font-family: 'Berkshire Swash', cursive;
-  }
+#sex {
+  font-size: 25px;
+  border-bottom: 2px solid maroon;
+  color: maroon;
+  font-family: "Berkshire Swash", cursive;
+}
 
-  #sex {
-   font-size: 25px;
-   border-bottom: 2px solid maroon;
-   color: maroon;
-   font-family: 'Berkshire Swash', cursive;
-  }
+input::placeholder {
+  text-align: center;
+  color: black;
+  font-family: "Lato", sans-serif;
+}
 
-  input::placeholder {
-     text-align: center;
-     color: black;
-     font-family: 'Lato', sans-serif;
-  }
+input {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
 
-  input {
-     text-align: center;
-     font-family: 'Lato', sans-serif;
-  }
+.landingPage {
+  width: 960px;
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(38, 3, 71);
+  text-shadow: 2px 2px goldenrod;
+  font-family: "Berkshire Swash", cursive;
+  display: block;
+}
 
-  .landingPage {
-     width: 960px;
-     margin: auto;
-     text-align: center;
-     font-size: 40px;
-     color: rgb(38, 3, 71);
-     text-shadow: 2px 2px goldenrod;
-     font-family: 'Berkshire Swash', cursive;
-     display: block;
-  }
-
-  .fab.fa-fort-awesome {
-     font-size: 50px;
-     color: rgb(38, 3, 71);
-  }
-  div.col.s2 {
-     text-align: center;
-     text-shadow: 2px 2px goldenrod;
-  }
-
+.fab.fa-fort-awesome {
+  font-size: 50px;
+  color: rgb(38, 3, 71);
+}
+div.col.s2 {
+  text-align: center;
+  text-shadow: 2px 2px goldenrod;
+}
 
 input::placeholder {
   text-align: center;
   color: black;
   font-family: "Berkshire Swash", cursive;
 }
-
 
 /* alyssa styling */
 
@@ -192,7 +193,7 @@ input::placeholder {
   border-radius: 5px;
   background-color: maroon;
   color: maroon;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: left;
   margin: 30px 40px 30px 40px;
 }
@@ -247,9 +248,9 @@ div.col.s2 {
 }
 
 .error-message {
-   color: maroon;
-   font-size: 40px;
-   text-align: center;
-   font-family: "Berkshire Swash", cursive;
-   margin: 30px, 0px, 30px, 0px;
+  color: maroon;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Berkshire Swash", cursive;
+  margin: 30px, 0px, 30px, 0px;
 }
