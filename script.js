@@ -220,6 +220,7 @@ $(document).ready(function() {
 
 //Event Listener for Fairy Dust
 $(".sidenav-trigger.waves-effect.waves-light.btn-large").click(function(event) {
+
   var fairyDust = new Audio("assets/FairyDust.wav");
   fairyDust.play();
 });
