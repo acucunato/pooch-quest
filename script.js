@@ -37,7 +37,6 @@ $(document).ready(function() {
           })
           .then(function(response) {
             console.log(response.status);
-            // console.log(response.status)
 
             if(response.status === 400){
 
@@ -132,10 +131,11 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      // if(response.status === 400 || response.status == undefined){
 
-      //   return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
-      // }
+      if(response.status === 400){
+
+        return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
+       }
 
       var infoCard = $("<div>");
 
@@ -223,4 +223,11 @@ $(document).ready(function() {
  
   // JQuery for Sidenav functionality
   $(".sidenav").sidenav();
+});
+
+//Event Listener for Fairy Dust
+  $("#sidebar-noise").click(function(event) {
+    console.log("Hitting sidebar")
+  var fairyDust = new Audio("./assets/FairyDust.wav");
+  fairyDust.play();
 });
