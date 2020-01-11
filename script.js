@@ -225,8 +225,8 @@ $(document).ready(function() {
 });
 
 //Event Listener for Fairy Dust
-  $("#sidebar-noise").click(function(event) {
+  $(".sidenav-trigger.waves-effect.waves-light.btn-large").click(function(event) {
     console.log("Hitting sidebar")
-  var fairyDust = new Audio("./assets/FairyDust.wav");
+  var fairyDust = new Audio("assets/FairyDust.wav");
   fairyDust.play();
 });
