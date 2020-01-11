@@ -223,3 +223,10 @@ $(document).ready(function() {
   // JQuery for Sidenav functionality
   $(".sidenav").sidenav();
 });
+
+//Event Listener for Fairy Dust
+  $("#sidebar-noise").click(function(event) {
+    console.log("Hitting sidebar")
+  var fairyDust = new Audio("./assets/FairyDust.wav");
+  fairyDust.play();
+});
