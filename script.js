@@ -131,10 +131,11 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
+
       if(response.status === 400){
 
         return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
-      }
+       }
 
       var infoCard = $("<div>");
 
