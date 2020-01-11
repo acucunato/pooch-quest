@@ -37,9 +37,8 @@ $(document).ready(function() {
           })
           .then(function(response) {
             console.log(response.status);
-            // console.log(response.status)
 
-            if(response.status === 400 || response.status == undefined){
+            if(response.status === 400){
 
               return $(".error-message").text("Alas fellow Knight, there are no hounds to be found.");
             }
@@ -132,7 +131,7 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
-      if(response.status === 400 || response.status == undefined){
+      if(response.status === 400){
 
         return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
       }
@@ -140,7 +139,9 @@ $(document).ready(function() {
       var infoCard = $("<div>");
 
       var cardHeader = $("<h2>");
+
       cardHeader.text("Get To Know Your Hound!");
+
       cardHeader.appendTo(infoCard);
 
       var dogName = $("<p>");
@@ -212,7 +213,7 @@ $(document).ready(function() {
     dogAPI(breed);
     adoptAPI(breed, location, sex);
 
-    
+
     //Event Listener for Dog Bark
     var dogBark = new Audio("assets/img/deepbark.wav");
     dogBark.play();
