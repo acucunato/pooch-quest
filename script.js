@@ -1,5 +1,6 @@
 $(document).ready(function() {
   // Function pull nearest adoptable dogs
+
   function adoptAPI(breed, location, sex) {
     var CLIENT_ID = "VCczzgBh8Mbtp61y6gfIIUFuFKPvGPo2Rt2tIwfskw1UOfylEg";
     var CLIENT_SECRET = "zudVxDG4Hcl82bK8u85yFqcIpQndRKRH8ARqYnvI";
@@ -23,7 +24,7 @@ $(document).ready(function() {
             breed +
             "&location=" +
             location +
-            "&sex=" +
+            "&gender=" +
             sex,
 
           {
@@ -71,7 +72,10 @@ $(document).ready(function() {
                   "A few treasures about this pooch: " +
                   "</p>" +
                   "<p>" +
-                  description +
+                  description + " " + 
+                  '<a href="' +
+                  urlLink +
+                  '" target="_blank">View full description ➳ </a>' +
                   "</p>" +
                   "<p>" +
                   "Age: " +
@@ -216,7 +220,6 @@ $(document).ready(function() {
 
 //Event Listener for Fairy Dust
 $(".sidenav-trigger.waves-effect.waves-light.btn-large").click(function(event) {
-  console.log("Hitting sidebar");
   var fairyDust = new Audio("assets/FairyDust.wav");
   fairyDust.play();
 });
