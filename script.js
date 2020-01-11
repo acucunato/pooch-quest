@@ -134,6 +134,10 @@ $(document).ready(function() {
 
       var infoCard = $("<div>");
 
+      var cardHeader = $("<h2>");
+      cardHeader.text("Before You Begin Your Journey, Get To Know Your Hound!");
+      cardHeader.appendTo(infoCard);
+
       var dogName = $("<p>");
       dogName.text(response[0].name);
       dogName.css("text-decoration", "underline");
@@ -203,8 +207,13 @@ $(document).ready(function() {
     dogAPI(breed);
     adoptAPI(breed, location, sex);
 
+    
+    //Event Listener for Dog Bark
+    var dogBark = new Audio("assets/img/deepbark.wav");
+    dogBark.play();
   });
 
+ 
   // JQuery for Sidenav functionality
   $(".sidenav").sidenav();
 });

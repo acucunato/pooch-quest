@@ -1,5 +1,6 @@
 .nav-extended {
   background-color: maroon;
+  background: radial-gradient(circle, rgba(128,0,0,1) 80%, rgba(45,40,40,1) 100%);
 }
 
 .sidenav {
@@ -14,7 +15,7 @@
 #poochQuestHeader {
   color: rgb(38, 3, 71);
   width: 100%;
-  letter-spacing: 100px;
+  letter-spacing: 80px;
   text-align: center;
   font-family: "Berkshire Swash", cursive;
   margin-left: 35px;
@@ -43,15 +44,23 @@
 }
 
 .sidenav-trigger {
-  color: rgb(38, 3, 71);
+  color: rgb(38, 3, 71) !important;
   text-shadow: 2px 2px goldenrod;
-  font-size: xx-large;
+  font-size: 60px !important;
   font-weight: bolder;
-  font-family: "MedievalSharp", cursive;
-  background-color: rgb(218, 209, 209);
-  padding: 1%;
-  border-style: ridge;
-  border-width: thick;
+  background-color: rgb(218, 209, 209) !important;
+  padding: 75%;
+  border-style: ridge !important;
+  border-width: thick !important;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 90px !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -65px;
+  border-radius: 10px;
+  font-family: "Berkshire Swash", cursive;
 }
 
 #searchBtn {
@@ -68,17 +77,15 @@ body {
   background-size: cover;
 }
 
-.sidenav-trigger {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -63px;
-  border-radius: 10px;
-  font-family: "Berkshire Swash", cursive;
+/*overriding Materialize default color property by important descriptor*/
+a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+   color: #260347 !important;
 }
 
+/*input label form focus color*/
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+   color: grey !important;
+}
 
   ul#slide-out.sidenav {
    background-image: url("https://i.pinimg.com/originals/27/82/8a/27828aea822ebf888324b649c8b4f23f.jpg");
