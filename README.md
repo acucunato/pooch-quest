@@ -50,7 +50,8 @@ Pooch Quest is an application that assists the user in finding their perfect dog
 
 ## Contributers
 
-- **Rana Fayez** - _HTML, CSS, Materialize, Jquery_ - [Rana Fayez](https://github.com/tagine "Rana Fayez")
-- **Alicia Burn** - _HTML, CSS, Materialize_ - [Alicia Burn](https://github.com/AliciaBurn "Alicia Burn")
-- **Alyssa Cucunato** - _HTML, CSS, Jquery, Javascript, AJAX Requests, APIs_ - [Alyssa Cucunato](https://github.com/acucunato/pooch-quest "Alyssa Cucunato")
-- **Jordan Smith** - _HTML, CSS, Jquery, Javascript, AJAX Requests, APIs_ -[Jordan Smith](https://github.com/jsmithxyz "Jordan Smith")
+- **Rana Fayez** - *HTML, CSS, Materialize, Jquery* - [Rana Fayez](https://github.com/tagine "Rana Fayez")
+- **Alicia Burn** - *HTML, CSS, Materialize* - [Alicia Burn](https://github.com/AliciaBurn "Alicia Burn")
+- **Alyssa Cucunato** - *HTML, CSS, Jquery, Javascript, AJAX Requests, APIs* - [Alyssa Cucunato](https://github.com/acucunato/pooch-quest "Alyssa Cucunato")
+- **Jordan Smith** - *HTML, CSS, Jquery, Javascript, AJAX Requests, APIs* -[Jordan Smith](https://github.com/jsmithxyz "Jordan Smith")
+
