@@ -140,7 +140,9 @@ $(document).ready(function() {
       var infoCard = $("<div>");
 
       var cardHeader = $("<h2>");
+
       cardHeader.text("Get To Know Your Hound!");
+
       cardHeader.appendTo(infoCard);
 
       var dogName = $("<p>");
