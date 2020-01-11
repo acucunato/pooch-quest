@@ -1,5 +1,6 @@
 .nav-extended {
   background-color: maroon;
+  background: radial-gradient(circle, rgba(128,0,0,1) 80%, rgba(45,40,40,1) 100%);
 }
 
 .sidenav {
@@ -14,7 +15,7 @@
 #poochQuestHeader {
   color: rgb(38, 3, 71);
   width: 100%;
-  letter-spacing: 100px;
+  letter-spacing: 80px;
   text-align: center;
   font-family: "Berkshire Swash", cursive;
   margin-left: 35px;
@@ -245,4 +246,12 @@ div.col.s2 {
 
 #copy-mission {
   font-size: 25px;
+}
+
+.error-message {
+   color: maroon;
+   font-size: 40px;
+   text-align: center;
+   font-family: "Berkshire Swash", cursive;
+   margin: 30px, 0px, 30px, 0px;
 }
