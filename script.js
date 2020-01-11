@@ -206,6 +206,7 @@ $(document).ready(function() {
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);
+
     
     //Event Listener for Dog Bark
     var dogBark = new Audio("assets/img/deepbark.wav");
