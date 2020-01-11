@@ -36,11 +36,10 @@ $(document).ready(function() {
             return response.json();
           })
           .then(function(response) {
-            console.log(response.status);
-
-            if(response.status === 400){
-
-              return $(".error-message").text("Alas fellow Knight, there are no hounds to be found.");
+            if (response.status === 400) {
+              return $(".error-message").text(
+                "Alas fellow Knight, there are no hounds to be found."
+              );
             }
 
             for (i = 0; i < response.animals.length; i++) {
@@ -112,8 +111,7 @@ $(document).ready(function() {
 
               $("#adopt-section").append(newCard);
             }
-          })
-      
+          });
       });
   }
 
@@ -129,13 +127,13 @@ $(document).ready(function() {
       url: urlquery,
       method: "GET"
     }).then(function(response) {
-      console.log(response);
-
-
-      if(response.status === 400){
-
-        return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
-       }
+      if (response.status === 400) {
+        return $(".breedInfo").text(
+          "No hounds by the name of '" +
+            breed +
+            "' exist in this land! Double check the letters on your scroll!"
+        );
+      }
 
       var infoCard = $("<div>");
 
@@ -151,39 +149,32 @@ $(document).ready(function() {
       dogName.css("font-weight", "bold");
       dogName.css("font-size", 35);
       dogName.appendTo(infoCard);
-      console.log(response[0].name);
 
       var dogWeight = $("<p>");
       dogWeight.text("Average Weight: " + response[0].weight.imperial + " lbs");
       dogWeight.appendTo(infoCard);
-      console.log(response[0].weight.imperial);
 
       var dogHeight = $("<p>");
       dogHeight.text(
         "Average Height: " + response[0].height.imperial + " inches"
       );
       dogHeight.appendTo(infoCard);
-      console.log(response[0].height.imperial);
 
       var lifeSpan = $("<p>");
       lifeSpan.text("Life Span: " + response[0].life_span);
       lifeSpan.appendTo(infoCard);
-      console.log(response[0].life_span);
 
       var dogTemperament = $("<p>");
       dogTemperament.text("Temperament: " + response[0].temperament);
       dogTemperament.appendTo(infoCard);
-      console.log(response[0].temperament);
 
       var breedGroup = $("<p>");
       breedGroup.text("Breed Group: " + response[0].breed_group);
       breedGroup.appendTo(infoCard);
-      console.log(response[0].breed_group);
 
       var bredFor = $("<p>");
       bredFor.text("Bred For: " + response[0].bred_for);
       bredFor.appendTo(infoCard);
-      console.log(response[0].bred_for);
 
       infoCard.appendTo("#breedSection");
     });
@@ -199,7 +190,7 @@ $(document).ready(function() {
     var breed = $("#breed_name")
       .val()
       .trim();
-    
+
     var location = $("#location_name")
       .val()
       .trim();
@@ -214,20 +205,18 @@ $(document).ready(function() {
     dogAPI(breed);
     adoptAPI(breed, location, sex);
 
-
     //Event Listener for Dog Bark
     var dogBark = new Audio("assets/img/deepbark.wav");
     dogBark.play();
   });
 
- 
   // JQuery for Sidenav functionality
   $(".sidenav").sidenav();
 });
 
 //Event Listener for Fairy Dust
-  $(".sidenav-trigger.waves-effect.waves-light.btn-large").click(function(event) {
-    console.log("Hitting sidebar")
+$(".sidenav-trigger.waves-effect.waves-light.btn-large").click(function(event) {
+  console.log("Hitting sidebar");
   var fairyDust = new Audio("assets/FairyDust.wav");
   fairyDust.play();
 });
