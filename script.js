@@ -1,11 +1,6 @@
-
-
-$(document).ready(function () {
-
-
+$(document).ready(function() {
   // Function pull nearest adoptable dogs
   function adoptAPI(breed, location, sex) {
-
     var CLIENT_ID = "VCczzgBh8Mbtp61y6gfIIUFuFKPvGPo2Rt2tIwfskw1UOfylEg";
     var CLIENT_SECRET = "zudVxDG4Hcl82bK8u85yFqcIpQndRKRH8ARqYnvI";
     fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -19,18 +14,17 @@ $(document).ready(function () {
       },
       method: "POST"
     })
-
-      .then(function (response) {
+      .then(function(response) {
         return response.json();
       })
-      .then(function (response) {
+      .then(function(response) {
         fetch(
           "https://api.petfinder.com/v2/animals?type=Dog&distance=50&status=adoptable&breed=" +
-          breed +
-          "&location=" +
-          location +
-          "&sex=" +
-          sex,
+            breed +
+            "&location=" +
+            location +
+            "&sex=" +
+            sex,
 
           {
             headers: {
@@ -38,46 +32,86 @@ $(document).ready(function () {
             }
           }
         )
-          .then(function (response) {
+          .then(function(response) {
             return response.json();
           })
-          .then(function (response) {
-
+          .then(function(response) {
             console.log(response);
- 
-    for (i = 0; i < response.animals.length; i++) {
-      var name = response.animals[i].name;
-      var age = response.animals[i].age;
-      var description = response.animals[i].description;
-      var urlLink = response.animals[i].url;
-      var distance = response.animals[i].distance;
-      var photo = response.animals[i].photos[0].small;
 
-      var newCard = $('<div class="col s12 m7">').html('<h2 class="header">' + name + '   ' + age + '</h2>' +
-      '<div class="card horizontal">' +
-       '<div class="card-image">' +
-        '<img src="' + photo + '">' +
-        '</div>' +
-        '<div class="card-stacked">' +
-        '<div class="card-content">' +
-         '<p>' + description + '</p>' +
-         '<p>' + distance + '</p>' +
-        '</div>' +
-        '<div class="card-action">' +
-        '<a href="' + urlLink + '"> Your Quest is Over - Click Here to Adopt Me! </a>' +
-        '</div>' + 
-        '</div>' +
-      '</div>' +
-    '</div>')
+            for (i = 0; i < response.animals.length; i++) {
+              var name = response.animals[i].name;
+              var age = response.animals[i].age;
+              var description = response.animals[i].description;
+              var urlLink = response.animals[i].url;
+              var distance = response.animals[i].distance;
+              var photo = response.animals[i].photos[0].medium;
+              var city = response.animals[i].contact.address.city;
+              var state = response.animals[i].contact.address.state;
+              var postCode = response.animals[i].contact.address.postcode;
+              var size = response.animals[i].size;
+              var gender = response.animals[i].gender;
 
-    $("#adopt-section").append(newCard);
-    }
+              var newCard = $('<div class="col s12 m7" id="adopt-cards">').html(
+                '<h3 class="header" id="dog-name">' +
+                  name +
+                  "</h3>" +
+                  '<div class="card horizontal" id="card-background">' +
+                  '<div class="card-image">' +
+                  '<img src="' +
+                  photo +
+                  '">' +
+                  "</div>" +
+                  '<div class="card-stacked">' +
+                  '<div class="card-content">' +
+                  '<p id="tidbits">' +
+                  "A few treasures about this pooch: " +
+                  "</p>" +
+                  "<p>" +
+                  description +
+                  "</p>" +
+                  "<p>" +
+                  "Age: " +
+                  age +
+                  "</p>" +
+                  "<p>" +
+                  "Size: " +
+                  size +
+                  "</p>" +
+                  "<p>" +
+                  "Gender: " +
+                  gender +
+                  "</p>" +
+                  "<p>" +
+                  "This pooch could be yours with a small journey of " +
+                  distance.toFixed(1) +
+                  " miles." +
+                  "</p>" +
+                  "<br>" +
+                  '<p id="city-state-post">' +
+                  city +
+                  ", " +
+                  state +
+                  " " +
+                  postCode +
+                  "</p>" +
+                  "</div>" +
+                  '<div class="card-action">' +
+                  '<a href="' +
+                  urlLink +
+                  '" target="_blank"> Your Quest is Over - Click Here to Adopt Me! </a>' +
+                  "</div>" +
+                  "</div>" +
+                  "</div>" +
+                  "</div>"
+              );
 
-    
-  });
-});
-}
+              $("#adopt-section").append(newCard);
+            }
 
+            // $("#adopt-cards").css()
+          });
+      });
+  }
 
   // Function to pull Breed Information for API database
   function dogAPI(breed) {
@@ -90,7 +124,7 @@ $(document).ready(function () {
     $.ajax({
       url: urlquery,
       method: "GET"
-    }).then(function (response) {
+    }).then(function(response) {
       console.log(response);
 
       var infoCard = $("<div>");
@@ -100,17 +134,22 @@ $(document).ready(function () {
       cardHeader.appendTo(infoCard);
 
       var dogName = $("<p>");
-      dogName.text("Name: "+ response[0].name);
+      dogName.text(response[0].name);
+      dogName.css("text-decoration", "underline");
+      dogName.css("font-weight", "bold");
+      dogName.css("font-size", 35);
       dogName.appendTo(infoCard);
       console.log(response[0].name);
 
       var dogWeight = $("<p>");
-      dogWeight.text("Weight: " + response[0].weight.imperial+ " lbs");
+      dogWeight.text("Average Weight: " + response[0].weight.imperial + " lbs");
       dogWeight.appendTo(infoCard);
       console.log(response[0].weight.imperial);
 
       var dogHeight = $("<p>");
-      dogHeight.text("Height: " + response[0].height.imperial+" inches");
+      dogHeight.text(
+        "Average Height: " + response[0].height.imperial + " inches"
+      );
       dogHeight.appendTo(infoCard);
       console.log(response[0].height.imperial);
 
@@ -120,12 +159,12 @@ $(document).ready(function () {
       console.log(response[0].life_span);
 
       var dogTemperament = $("<p>");
-      dogTemperament.text("Temperament: "+ response[0].temperament);
+      dogTemperament.text("Temperament: " + response[0].temperament);
       dogTemperament.appendTo(infoCard);
       console.log(response[0].temperament);
 
       var breedGroup = $("<p>");
-      breedGroup.text("Breed Group: "+ response[0].breed_group);
+      breedGroup.text("Breed Group: " + response[0].breed_group);
       breedGroup.appendTo(infoCard);
       console.log(response[0].breed_group);
 
@@ -135,29 +174,34 @@ $(document).ready(function () {
       console.log(response[0].bred_for);
 
       infoCard.appendTo("#breedSection");
-
-
-
-
     });
   }
 
   // Event Listener for Search Button
-  $("#searchBtn").on("click", function (event) {
+  $("#searchBtn").on("click", function(event) {
     event.preventDefault();
 
     $("#breedSection").empty();
+    $("#adopt-section").empty();
 
-    var breed = $("#breed_name").val().trim();
-    var location = $("#location_name").val().trim();
-    var sex = $("#sex").val().trim();
+    var breed = $("#breed_name")
+      .val()
+      .trim();
+    var location = $("#location_name")
+      .val()
+      .trim();
+    var sex = $("#sex")
+      .val()
+      .trim();
+
+    $("#breedSection").css("display", "block");
+    $("#adopt-section").css("display", "block");
+    $(".landingPage").css("display", "none");
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);
-  })
+  });
 
   // JQuery for Sidenav functionality
-  $('.sidenav').sidenav();
+  $(".sidenav").sidenav();
 });
-
-

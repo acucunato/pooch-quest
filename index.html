@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pooch Quest!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="script.js"></script>  
-</head> 
-<body>
 
-  <div class="container-fluid"></div>  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pooch Quest!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|MedievalSharp|Berkshire+Swash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/8eda10df1b.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid"></div>
   <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Pooch Quest</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a>A link</a></li>
-        <li><a>A second link</a></li>
-        <li><a>A third link</a></li>
-      </ul>
+      <a href="index.html" class="brand-logo center"><img src="assets/img/poochlogo.png" height="220px"
+          width="200px"></a>
     </div>
     <div class="nav-content">
-      <span class="nav-title">Title</span>
-      <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
-        <i class="material-icons">add</i>
-      </a>
+      <div class="center">
+        <span class="nav-title center">
+          <h1 id="poochQuestHeader">Pooch Quest</h1>
+        </span>
+      </div>
     </div>
   </nav>
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
 
+        <h4 id="explore">Explore</h4>
 
-    <ul id="slide-out" class="sidenav">
-      <li>
-        <div class="user-view">
-        <div class="background">
-          <img src="images/office.jpg">
-        </div>
-        <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-        <h4>Seeking</h4 >
       </div>
     </li>
-      <div class="row" id="search-param">
-        <div class="col s12">
-          <div class="row">
-            <div>
-              <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
-              <label for="breed_name" class="search-labels">Breed</label>
-            </div>
-              <br>
-            <div>
-              <input placeholder="Zip Code" id="location_name" type="text" class="validate">
-              <label for="location_name" class="search-labels">Location</label>
-            </div>
-              <br>
-            <br>
-            <div>
-              <input placeholder="Male or Female" id="sex" type="text" class="validate">
-              <label for="sex" class="search-labels">Sex</label>
-            </div>
-
+    <div class="row" id="search-param">
+      <div class="col s12">
+        <div class="row">
+          <div>
+            <input placeholder="e.g. Corgi" id="breed_name" type="text" class="validate">
+            <label for="breed_name" class="search-labels">Breed</label>
           </div>
-          <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch
-            <i class="material-icons right"></i>
-          </button>
+          <br>
+          <div>
+            <input placeholder="Zip Code" id="location_name" type="text" class="validate">
+            <label for="location_name" class="search-labels">Location</label>
+          </div>
+          <br>
+          <br>
+          <div>
+            <input placeholder="Male or Female" id="sex" type="text" class="validate">
+            <label for="sex" class="search-labels">Sex</label>
+          </div>
         </div>
-        </div>
-
+        <button class="btn waves-effect waves-light" id="searchBtn" type="submit" name="action">Fetch <i
+            class="fas fa-paw"></i>
+        </button>
       </div>
+    </div>
+    </div>
   </ul>
-  
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">Start the Chase</i></a>
-</div>
 
-<div class="breedInfo" id="breedSection"></div>
-<div id="adopt-section"></div>
+  <a href="#" data-target="slide-out" class="sidenav-trigger">Start Your Adventure</a>
+  </div>
+  <div class="row">
+    <div class="col s2"><i class="fab fa-fort-awesome"></i></div>
+    <div class="col s8">
+      <div class="landingPage">
+        <p>The Quest to find your Perfect Pooch!
+            <p id="copy-mission">
+          
+          Good Morrow Fellow Knight! We've recieved a raven from the town over and they tell us you're on a journey to find your perfect pooch! You've come to the right place with Pooch Quest! <br><br>
+
+          We want to make sure this hound will fit into your daily routine seamlessly, so whichever breed you're searching for, Pooch Quest gives you pertinent information about your desired breed so you can move forward with your choice bravely. We must do our research first fellow Knight, finding the right pooch is an important treasure!
+          <br><br>
+
+          Then the quest begins, that's why you're here right? After you have decided on your breed, location, and gender; Pooch Quest shows you adoptable hounds in your area. Scroll through and find a hound that will become your forever companion.
+          <br><br>
+
+          Okay fellow Knight, you're ready to Start Your Adventure!
+        
+        
+        </p></p>
+      </div>
+    </div>
+    <div class="col s2"><i class="fab fa-fort-awesome"></i></div>
+  </div>
+
+  <div class="breedInfo" id="breedSection"></div>
+
+
+  <div id="adopt-section"></div>
 
 </body>
-  
+
 </html>
