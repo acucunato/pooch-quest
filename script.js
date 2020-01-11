@@ -37,7 +37,6 @@ $(document).ready(function() {
           })
           .then(function(response) {
             console.log(response.status);
-            // console.log(response.status)
 
             if(response.status === 400){
 
@@ -132,10 +131,17 @@ $(document).ready(function() {
     }).then(function(response) {
       console.log(response);
 
+      if(response.status === 400){
+
+        return $(".breedInfo").text("No hounds by the name of '" + breed + "' exist in this land! Double check the letters on your scroll!");
+      }
+
       var infoCard = $("<div>");
 
       var cardHeader = $("<h2>");
-      cardHeader.text("Before You Begin Your Journey, Get To Know Your Hound!");
+
+      cardHeader.text("Get To Know Your Hound!");
+
       cardHeader.appendTo(infoCard);
 
       var dogName = $("<p>");
@@ -206,7 +212,8 @@ $(document).ready(function() {
 
     dogAPI(breed);
     adoptAPI(breed, location, sex);
-    
+
+
     //Event Listener for Dog Bark
     var dogBark = new Audio("assets/img/deepbark.wav");
     dogBark.play();
