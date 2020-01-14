@@ -37,7 +37,7 @@ $(document).ready(function() {
             return response.json();
           })
           .then(function(response) {
-            if (response.status === 400) {
+            if (response.status === 400 || response.animals.length === 0) {
               return $(".error-message").text(
                 "Alas fellow Knight, there are no hounds to be found."
               );
@@ -72,7 +72,8 @@ $(document).ready(function() {
                   "A few treasures about this pooch: " +
                   "</p>" +
                   "<p>" +
-                  description + " " + 
+                  description +
+                  " " +
                   '<a href="' +
                   urlLink +
                   '" target="_blank">View full description ➳ </a>' +
@@ -115,6 +116,11 @@ $(document).ready(function() {
 
               $("#adopt-section").append(newCard);
             }
+          })
+          .catch(function() {
+            return $(".error-message").text(
+              "Alas fellow Knight, there are no hounds to be found."
+            );
           });
       });
   }
@@ -130,58 +136,68 @@ $(document).ready(function() {
     $.ajax({
       url: urlquery,
       method: "GET"
-    }).then(function(response) {
-      if (response.status === 400) {
+    })
+      .then(function(response) {
+        if (response.status === 400) {
+          return $(".breedInfo").text(
+            "No hounds by the name of '" +
+              breed +
+              "' exist in this land! Double check the letters on your scroll!"
+          );
+        }
+
+        var infoCard = $("<div>");
+
+        var cardHeader = $("<h2>");
+
+        cardHeader.text("Get To Know Your Hound!");
+
+        cardHeader.appendTo(infoCard);
+
+        var dogName = $("<p>");
+        dogName.text(response[0].name);
+        dogName.css("text-decoration", "underline");
+        dogName.css("font-weight", "bold");
+        dogName.css("font-size", 35);
+        dogName.appendTo(infoCard);
+
+        var dogWeight = $("<p>");
+        dogWeight.text(
+          "Average Weight: " + response[0].weight.imperial + " lbs"
+        );
+        dogWeight.appendTo(infoCard);
+
+        var dogHeight = $("<p>");
+        dogHeight.text(
+          "Average Height: " + response[0].height.imperial + " inches"
+        );
+        dogHeight.appendTo(infoCard);
+
+        var lifeSpan = $("<p>");
+        lifeSpan.text("Life Span: " + response[0].life_span);
+        lifeSpan.appendTo(infoCard);
+
+        var dogTemperament = $("<p>");
+        dogTemperament.text("Temperament: " + response[0].temperament);
+        dogTemperament.appendTo(infoCard);
+
+        var breedGroup = $("<p>");
+        breedGroup.text("Breed Group: " + response[0].breed_group);
+        breedGroup.appendTo(infoCard);
+
+        var bredFor = $("<p>");
+        bredFor.text("Bred For: " + response[0].bred_for);
+        bredFor.appendTo(infoCard);
+
+        infoCard.appendTo("#breedSection");
+      })
+      .catch(function() {
         return $(".breedInfo").text(
           "No hounds by the name of '" +
             breed +
             "' exist in this land! Double check the letters on your scroll!"
         );
-      }
-
-      var infoCard = $("<div>");
-
-      var cardHeader = $("<h2>");
-
-      cardHeader.text("Get To Know Your Hound!");
-
-      cardHeader.appendTo(infoCard);
-
-      var dogName = $("<p>");
-      dogName.text(response[0].name);
-      dogName.css("text-decoration", "underline");
-      dogName.css("font-weight", "bold");
-      dogName.css("font-size", 35);
-      dogName.appendTo(infoCard);
-
-      var dogWeight = $("<p>");
-      dogWeight.text("Average Weight: " + response[0].weight.imperial + " lbs");
-      dogWeight.appendTo(infoCard);
-
-      var dogHeight = $("<p>");
-      dogHeight.text(
-        "Average Height: " + response[0].height.imperial + " inches"
-      );
-      dogHeight.appendTo(infoCard);
-
-      var lifeSpan = $("<p>");
-      lifeSpan.text("Life Span: " + response[0].life_span);
-      lifeSpan.appendTo(infoCard);
-
-      var dogTemperament = $("<p>");
-      dogTemperament.text("Temperament: " + response[0].temperament);
-      dogTemperament.appendTo(infoCard);
-
-      var breedGroup = $("<p>");
-      breedGroup.text("Breed Group: " + response[0].breed_group);
-      breedGroup.appendTo(infoCard);
-
-      var bredFor = $("<p>");
-      bredFor.text("Bred For: " + response[0].bred_for);
-      bredFor.appendTo(infoCard);
-
-      infoCard.appendTo("#breedSection");
-    });
+      });
   }
 
   // Event Listener for Search Button
